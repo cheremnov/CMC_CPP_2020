@@ -1,6 +1,10 @@
+/**
+ * Calculate a determinant of a matrix,
+ * using constexpr
+ * Works on C++17.
+ */
 #include <array>
 #include <iostream>
-
 template <int N>
 /**
  * A recursive approach:
@@ -8,7 +12,7 @@ template <int N>
  * Use a formula to calculate a matrix determinant
  */
 constexpr int det(const std::array<std::array<int, N>, N>& a) {
-	// A constexpr 
+	// Terminate a recursion, when N == 1
 	if constexpr( N < 1 ){
 		return 0;
 	} else if constexpr( N == 1 ){
@@ -26,7 +30,7 @@ constexpr int det(const std::array<std::array<int, N>, N>& a) {
 					if( column_idx != excluded_column_idx ){
 						submatrix_column_idx = column_idx;
 						if( column_idx > excluded_column_idx ){
-							// An excluded row causes changes in the indexes
+							// An excluded row causes changes in the indexation
 							--submatrix_column_idx;
 						}
 						sub_matrix[row_idx - 1][submatrix_column_idx] = a[row_idx][column_idx];
@@ -47,5 +51,4 @@ constexpr std::array<std::array<int, 3>, 3> A = {{
 ,{2, 3, 7}
 }};
 constexpr int res = det<3>(A);
-std::cout << res << std::endl;
 }
