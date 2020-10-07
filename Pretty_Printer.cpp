@@ -57,6 +57,7 @@ struct Printer {
 	Printer& format( const std::vector<T>& vec){
 		printer_value_ << "[";
 		formatIterable<std::vector<T> > ( vec);
+		printer_value_ << "]";
 		return *this;
 	}
 	/** 
