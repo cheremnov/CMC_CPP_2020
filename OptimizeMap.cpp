@@ -94,6 +94,7 @@ int main(){
     std::cout << "With hint: " << std::chrono::duration_cast<ms>(measure_end - measure_begin).count()
         << " milliseconds" << std::endl;
     
+    integer_map.clear();
     std::cout << "Second measurement: " << std::endl;
     fillMap(integer_map, SAMPLES_NUMBER, LOWER_LIMIT, 2 * LOWER_LIMIT); 
     /**
