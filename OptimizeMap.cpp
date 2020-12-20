@@ -111,7 +111,7 @@ int main(){
      * Use a hint to add sorted keys to the map
      * Insert a new key directly after the last inserted key
      */
-    fillMap(integer_map, SAMPLES_NUMBER, 0, UPPER_LIMIT); 
+    fillMap(integer_map, SAMPLES_NUMBER, LOWER_LIMIT, 2 * LOWER_LIMIT); 
     measure_begin = chrono_clock::now();
     fillMapInterval( integer_map, 0, LOWER_LIMIT, HINT_LAST_INSERTED);
     measure_end = chrono_clock::now();
