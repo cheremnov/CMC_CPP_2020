@@ -46,7 +46,7 @@ void fillMapInterval( std::map<int, int>& example_map, int start, int end,
             example_map.insert( std::pair<int,int> (key, 1));
         } else if( hint_type == HINT_END ){
             example_map.insert( example_map.end(), std::pair<int,int> (key, 1));
-        } else if( hint_type = HINT_LAST_INSERTED){
+        } else if( hint_type == HINT_LAST_INSERTED){
             last_inserted = example_map.insert( last_inserted, std::pair<int,int> (key, 1));
         }
     }
